@@ -14,3 +14,9 @@ options:
   router_ssh_host_key: null
   key_file_path_on_router: null
   cert_file_path_on_router: null
+options:
+  router_user: str
+  router_ip: str
+  router_ssh_host_key: str
+  key_file_path_on_router: str
+  cert_file_path_on_router: str
