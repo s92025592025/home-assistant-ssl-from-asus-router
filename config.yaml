@@ -5,4 +5,4 @@ description: "An Add-on that help refresh the SSL certificate under the /SSL fol
 arch:
   - amd64
 map:
-  - ssl
+  - ssl:rw
