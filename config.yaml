@@ -6,3 +6,11 @@ arch:
   - amd64
 map:
   - ssl:rw
+environment:
+  CONFIG_PATH: /data/home-assistant-ssl-from-asus-router/options.json
+options:
+  router_user: null
+  router_ip: null
+  router_ssh_host_key: null
+  key_file_path_on_router: null
+  cert_file_path_on_router: null
