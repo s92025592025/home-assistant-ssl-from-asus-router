@@ -26,3 +26,4 @@ jobs:
             --test \
             --all \
             --target .
+            --addon
