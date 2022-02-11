@@ -10,6 +10,8 @@ arch:
   - i386
 map:
   - ssl:rw
+environment:
+  CONFIG_PATH: /data/options.json
 options:
   sslFromAsusRouter:
     routerUser: null
