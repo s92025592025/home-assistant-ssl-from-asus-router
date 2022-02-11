@@ -23,7 +23,7 @@ echo "Touching ${SSH_DIR}/known_hosts..."
 touch ${SSH_DIR}/known_hosts
 
 echo "Setting ${SSH_DIR}/known_hosts Permission..."
-chmod 644 ${SSH_DIR}/known_hosts
+
 
 ls -lrt ${SSH_DIR}
 
@@ -31,10 +31,13 @@ echo "Saving know hosts..."
 KNOW_HOST_SSH_SEARCH_RESULT=$(grep "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts)
 if [[ -n "$KNOW_HOST_SSH_SEARCH_RESULT" ]]; then
 	echo "Not known Host, adding..."
-	echo "$ROUTER_RSA_KEY" >> ${SSH_DIR}/known_hosts;
+	chmod 777 ${SSH_DIR}/known_hosts
+	echo "$ROUTER_RSA_KEY" >> ${SSH_DIR}/known_hosts
 else
 	echo "Already known host..."
 fi
+
+chmod 644 ${SSH_DIR}/known_hosts;
 
 echo "scping..."
 scp -v ${ROUTER_USER}@${ROUTER_IP}:${KEY_PATH_ON_ROUTER} /ssl/
