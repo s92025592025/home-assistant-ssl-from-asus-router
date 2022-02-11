@@ -5,3 +5,8 @@ This add-on helps transfer the SSL sertificate that Asus Routers creates along w
 ## Configurable Options
 | key | Type | Description | Required/Optional 
 | --- | --- | --- | --- 
+| routerUser | String | The user name to scp with router | Required
+| routerIp | String | The IP Address to the Router | Required
+| rsaPrivateKeyPath | String | The path under `config` that points to the RSA private key need to establish the scp connection | Required
+| keyFilePathOnRouter | String | The key file path on the router | Required
+| certFilePathOnRouter | String | The cert file path on the router | Required
