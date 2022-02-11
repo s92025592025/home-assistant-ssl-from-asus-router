@@ -1,6 +1,6 @@
 name: "Refresh SSL Cert From Asus DDNS Router"
 version: "0.0.1"
-slug: "refresher_ssl_cert_from_asus_ddns_router"
+slug: "refresherSslCertFromAsusDdnsRouter"
 description: "An Add-on that help refresh the SSL certificate under the /SSL folder from Asus Router DDNS"
 arch:
   - armhf
@@ -14,16 +14,16 @@ advanced: true
 map:
   - ssl:rw
 options:
-  home_assistant_ssl_from_asus_router:
-    router_user: null
-    router_ip: null
-    router_ssh_host_key: null
-    key_file_path_on_router: null
-    cert_file_path_on_router: null
+  sslFromAsusRouter:
+    routerUser: null
+    routerIp: null
+    routerSshHostKey: null
+    keyFilePathOnRouter: null
+    certFilePathOnRouter: null
 schema:
-  home_assistant_ssl_from_asus_router:
-    router_user: str
-    router_ip: str
-    router_ssh_host_key: str
-    key_file_path_on_router: str
-    cert_file_path_on_router: str
+  sslFromAsusRouter:
+    routerUser: str
+    routerIp: str
+    routerSshHostKey: str
+    keyFilePathOnRouter: str
+    certFilePathOnRouter: str
