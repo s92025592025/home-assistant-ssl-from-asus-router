@@ -7,14 +7,14 @@ arch:
 map:
   - ssl:rw
 options:
-  home-assistant-ssl-from-asus-router:
+  home_assistant_ssl_from_asus_router:
     router_user: null
     router_ip: null
     router_ssh_host_key: null
     key_file_path_on_router: null
     cert_file_path_on_router: null
 schema:
-  home-assistant-ssl-from-asus-router:
+  home_assistant_ssl_from_asus_router:
     router_user: str
     router_ip: str
     router_ssh_host_key: str
