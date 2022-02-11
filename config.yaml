@@ -10,19 +10,20 @@ arch:
   - i386
 map:
   - ssl:rw
+  - config
 environment:
   CONFIG_PATH: /data/options.json
 options:
   sslFromAsusRouter:
     routerUser: null
     routerIp: null
-    accessSshPrivateRsaKey: null
+    rsaPrivateKeyPath: null
     keyFilePathOnRouter: null
     certFilePathOnRouter: null
 schema:
   sslFromAsusRouter:
     routerUser: str
     routerIp: str
-    accessSshPrivateRsaKey: str
+    rsaPrivateKeyPath: str
     keyFilePathOnRouter: str
     certFilePathOnRouter: str

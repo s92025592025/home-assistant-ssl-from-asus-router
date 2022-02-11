@@ -5,15 +5,14 @@ SSH_DIR=~/.ssh
 
 ROUTER_USER="$(bashio::config 'sslFromAsusRouter.routerUser')"
 ROUTER_IP="$(bashio::config 'sslFromAsusRouter.routerIp')"
-SSH_ACCESS_PRIVATE_RSA_KEY="$(bashio::config 'sslFromAsusRouter.accessSshPrivateRsaKey')"
+RSA_PRIVATE_KEY_PATH="$(bashio::config 'sslFromAsusRouter.rsaPrivateKeyPath')"
 KEY_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.keyFilePathOnRouter')"
 CERT_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.certFilePathOnRouter')"
 
 ROUTER_RSA_KEY=$(ssh-keyscan -t rsa ${ROUTER_IP})
 
 mkdir -p ${SSH_DIR}
-echo "${SSH_ACCESS_PRIVATE_RSA_KEY}" > ${SSH_DIR}/id_rsa
-cat ${SSH_DIR}/id_rsa
+cp /config/${RSA_PRIVATE_KEY_PATH} ${SSH_DIR}/id_rsa
 chmod 600 ${SSH_DIR}/id_rsa
 
 ls -lrt ${SSH_DIR}
