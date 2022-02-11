@@ -12,22 +12,18 @@ CERT_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.certFilePathOnRouter')"
 ROUTER_RSA_KEY=$(ssh-keyscan -t rsa ${ROUTER_IP})
 
 mkdir -p ${SSH_DIR}
+
 cp /config/${RSA_PRIVATE_KEY_PATH} ${SSH_DIR}/id_rsa
 chmod 600 ${SSH_DIR}/id_rsa
 
-cat ${SSH_DIR}/id_rsa
+touch ${SSH_DIR}/known_hosts
+chmod 644 ${SSH_DIR}/known_hosts
 
 ls -lrt ${SSH_DIR}
 
-if bashio::fs.file_exists "${SSH_DIR}/known_hosts"; then
-	KNOW_HOST_SSH_SEARCH_RESULT=$(grep "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts)
-
-	if [[ -n "$KNOW_HOST_SSH_SEARCH_RESULT" ]]; then
-		echo "$ROUTER_RSA_KEY" >> ${SSH_DIR}/known_hosts;
-	fi
-else
-	
-	echo "$(grep "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts)" >> ${SSH_DIR}/known_hosts;
+KNOW_HOST_SSH_SEARCH_RESULT=$(grep "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts)
+if [[ -n "$KNOW_HOST_SSH_SEARCH_RESULT" ]]; then
+	echo "$ROUTER_RSA_KEY" >> ${SSH_DIR}/known_hosts;
 fi
 
 scp -v ${ROUTER_USER}@${ROUTER_IP}:/tmp/etc/key.pem /ssl/
