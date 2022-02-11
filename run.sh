@@ -15,6 +15,8 @@ mkdir -p ${SSH_DIR}
 echo "${SSH_ACCESS_PRIVATE_RSA_KEY}" > ${SSH_DIR}/id_rsa
 chmod 600 ${SSH_DIR}/id_rsa
 
+ls -lrt ${SSH_DIR}
+
 if bashio::fs.file_exists "${SSH_DIR}/known_hosts"; then
 	KNOW_HOST_SSH_SEARCH_RESULT=$(grep "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts)
 
