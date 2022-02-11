@@ -29,11 +29,11 @@ ls -lrt ${SSH_DIR}
 
 echo "Saving know hosts..."
 if grep -q "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts; then
+	echo "Already known host..."
+else
 	echo "Not known Host, adding..."
 	chmod 777 ${SSH_DIR}/known_hosts
 	echo "$ROUTER_RSA_KEY" >> ${SSH_DIR}/known_hosts
-else
-	echo "Already known host..."
 fi
 
 chmod 644 ${SSH_DIR}/known_hosts;
