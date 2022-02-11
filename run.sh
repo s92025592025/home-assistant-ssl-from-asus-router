@@ -34,5 +34,5 @@ if [[ -n "$KNOW_HOST_SSH_SEARCH_RESULT" ]]; then
 fi
 
 echo "scping..."
-scp -v ${ROUTER_USER}@${ROUTER_IP}:/tmp/etc/key.pem /ssl/
-scp -v ${ROUTER_USER}@${ROUTER_IP}:/tmp/etc/cert.pem /ssl/
+scp -v ${ROUTER_USER}@${ROUTER_IP}:${KEY_PATH_ON_ROUTER} /ssl/
+scp -v ${ROUTER_USER}@${ROUTER_IP}:${CERT_PATH_ON_ROUTER} /ssl/
