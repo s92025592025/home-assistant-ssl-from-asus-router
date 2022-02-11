@@ -37,6 +37,7 @@ else
 fi
 
 chmod 644 ${SSH_DIR}/known_hosts;
+cat ${SSH_DIR}/known_hosts
 
 echo "scping..."
 scp -v ${ROUTER_USER}@${ROUTER_IP}:${KEY_PATH_ON_ROUTER} /ssl/
