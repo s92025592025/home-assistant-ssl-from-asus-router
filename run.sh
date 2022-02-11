@@ -4,5 +4,5 @@ echo "Hello world!"
 ls -lrt /ssl
 
 bashio::log.debug "CONFIG_PATH: $CONFIG_PATH"
-ROUTER_USER="$(bashio::config 'home-assistant-ssl-from-asus-router.router_user')"
+ROUTER_USER="$(bashio::config 'home_assistant_ssl_from_asus_router.router_user')"
 echo "ROUTER_USER: $ROUTER_USER"
