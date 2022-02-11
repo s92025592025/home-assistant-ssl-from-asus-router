@@ -11,3 +11,8 @@ This add-on helps transfer the SSL sertificate that Asus Routers creates along w
 | rsaPrivateKeyPath | String | The path relative to `config` folder that points to the RSA private key need to establish the scp connection | Required
 | keyFilePathOnRouter | String | The key file path on the router | Required
 | certFilePathOnRouter | String | The cert file path on the router | Required
+
+## Attribution
+icon.png is made thanks to the following:
+* <a href="https://www.flaticon.com/free-icons/pickup-truck" title="pickup-truck icons">Pickup-truck icons created by Freepik - Flaticon</a>
+* <a href="https://www.flaticon.com/free-icons/certificate" title="certificate icons">Certificate icons created by Smashicons - Flaticon</a>
