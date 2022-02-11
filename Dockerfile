@@ -5,4 +5,4 @@ FROM $BUILD_FROM
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-CMD [ "/run.sh", "|", "tee", "execute.log" ]
+CMD [ "/run.sh"]
