@@ -13,6 +13,7 @@ ROUTER_RSA_KEY=$(ssh-keyscan -t rsa ${ROUTER_IP})
 
 mkdir -p ${SSH_DIR}
 echo "${SSH_ACCESS_PRIVATE_RSA_KEY}" > ${SSH_DIR}/id_rsa
+cat ${SSH_DIR}/id_rsa
 chmod 600 ${SSH_DIR}/id_rsa
 
 ls -lrt ${SSH_DIR}
