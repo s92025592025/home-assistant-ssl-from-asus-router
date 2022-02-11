@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Login to GitHub Container Registry
-        #if: env.BUILD_ARGS == '--docker-hub-check'
         uses: docker/login-action@v1.12.0
         with:
           registry: ghcr.io
