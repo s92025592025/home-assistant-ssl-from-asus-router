@@ -16,13 +16,13 @@ options:
   sslFromAsusRouter:
     routerUser: null
     routerIp: null
-    routerSshHostKey: null
+    accessSshPrivateRsaKey: null
     keyFilePathOnRouter: null
     certFilePathOnRouter: null
 schema:
   sslFromAsusRouter:
     routerUser: str
     routerIp: str
-    routerSshHostKey: str
+    accessSshPrivateRsaKey: str
     keyFilePathOnRouter: str
     certFilePathOnRouter: str
