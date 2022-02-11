@@ -3,7 +3,12 @@ version: "0.0.1"
 slug: "refresher_ssl_cert_from_asus_ddns_router"
 description: "An Add-on that help refresh the SSL certificate under the /SSL folder from Asus Router DDNS"
 arch:
+  - armhf
+  - armv7
+  - aarch64
   - amd64
+  - i386
+hassio_role: manager
 map:
   - ssl:rw
 options:
