@@ -10,6 +10,7 @@ arch:
   - i386
 hassio_role: manager
 hassio_api: true
+advanced: true
 map:
   - ssl:rw
 options:
