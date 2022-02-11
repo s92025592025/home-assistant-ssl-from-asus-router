@@ -15,11 +15,11 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ secrets.GIT_USER }}
-          password: ${{ secrets.GIT_HUB_REGISTRY_READER_TOKEN }}
+          password: ${{ secrets.GIT_TOKEN }}
 
       - name: Checkout the repository
         uses: actions/checkout@v2
-        
+
       - name: Test build
         uses: home-assistant/builder@2022.01.0
         with:
