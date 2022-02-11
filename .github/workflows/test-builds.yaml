@@ -1,0 +1,20 @@
+name: test-builds
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Test build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Test build
+        uses: home-assistant/builder@2022.01.0
+        with:
+          args: |
+            --test \
+            --all \
+            --target .
