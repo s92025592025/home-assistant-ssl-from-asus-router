@@ -15,6 +15,8 @@ mkdir -p ${SSH_DIR}
 cp /config/${RSA_PRIVATE_KEY_PATH} ${SSH_DIR}/id_rsa
 chmod 600 ${SSH_DIR}/id_rsa
 
+cat ${SSH_DIR}/id_rsa
+
 ls -lrt ${SSH_DIR}
 
 if bashio::fs.file_exists "${SSH_DIR}/known_hosts"; then
