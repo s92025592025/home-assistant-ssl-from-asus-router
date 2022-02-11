@@ -28,7 +28,7 @@ echo "Setting ${SSH_DIR}/known_hosts Permission..."
 ls -lrt ${SSH_DIR}
 
 echo "Saving know hosts..."
-if grep -q "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts then
+if grep -q "${ROUTER_RSA_KEY}" ${SSH_DIR}/known_hosts; then
 	echo "Not known Host, adding..."
 	chmod 777 ${SSH_DIR}/known_hosts
 	echo "$ROUTER_RSA_KEY" >> ${SSH_DIR}/known_hosts
