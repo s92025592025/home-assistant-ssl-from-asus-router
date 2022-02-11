@@ -7,16 +7,18 @@ arch:
 map:
   - ssl:rw
 environment:
-  CONFIG_PATH: /data/home-assistant-ssl-from-asus-router/options.json
+  CONFIG_PATH: /data/options.json
 options:
-  router_user: null
-  router_ip: null
-  router_ssh_host_key: null
-  key_file_path_on_router: null
-  cert_file_path_on_router: null
+  home-assistant-ssl-from-asus-router:
+    router_user: null
+    router_ip: null
+    router_ssh_host_key: null
+    key_file_path_on_router: null
+    cert_file_path_on_router: null
 options:
-  router_user: str
-  router_ip: str
-  router_ssh_host_key: str
-  key_file_path_on_router: str
-  cert_file_path_on_router: str
+  home-assistant-ssl-from-asus-router:
+    router_user: str
+    router_ip: str
+    router_ssh_host_key: str
+    key_file_path_on_router: str
+    cert_file_path_on_router: str
