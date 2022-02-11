@@ -14,7 +14,7 @@ if bashio::fs.file_exists "/data/.ssh/known_hosts"; THEN
 	KNOW_HOST_SSH_SEARCH_RESULT=$(grep "${ROUTER_RSA_KEY}" /data/.ssh/known_hosts)
 
 	if [[ -n "$KNOW_HOST_SSH_SEARCH_RESULT" ]]; THEN
-		echo $ROUTER_RSA_KEY >> /data/.ssh/known_hosts
+		echo "$ROUTER_RSA_KEY" >> /data/.ssh/known_hosts
 	fi
 fi
 
