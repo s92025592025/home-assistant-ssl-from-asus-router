@@ -15,7 +15,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ secrets.GIT_USER }}
-          password: ${{ secrets.GIT_TOKEN }}
+          password: ${{ secrets.GIT_HUB_REGISTRY_READER_TOKEN }}
 
       - name: Checkout the repository
         uses: actions/checkout@v2
