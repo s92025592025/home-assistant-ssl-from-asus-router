@@ -34,12 +34,34 @@ jobs:
             --all \
             --target . \
             --addon
+
       - name: Login GitHub Container Registry on Docker
         run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-      - name: Retag for GitHub Container Registry on Docker
+
+      - name: Retag armhf for GitHub Container Registry on Docker
         run: docker tag s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }} ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
-      - name: Deploy Release Builds
+      - name: Deploy armhf Release Builds
         run: docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
+
+      - name: Retag armv7 for GitHub Container Registry on Docker
+        run: docker tag s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }} ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
+      - name: Deploy armv7 Release Builds
+        run: docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
+
+      - name: Retag aarch64 for GitHub Container Registry on Docker
+        run: docker tag s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }} ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
+      - name: Deploy aarch64 Release Builds
+        run: docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
+
+      - name: Retag amd64 for GitHub Container Registry on Docker
+        run: docker tag s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }} ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
+      - name: Deploy amd64 Release Builds
+        run: docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
+
+      - name: Retag i386 for GitHub Container Registry on Docker
+        run: docker tag s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }} ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
+      - name: Deploy i386 Release Builds
+        run: docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
             
             
             
