@@ -38,4 +38,4 @@ jobs:
             --all \
             --target . \
             --addon \
-            --base "${{ steps.addonVersion.outputs.data }}"
+            --base "${{ steps.addonVersion.outputs.data }}-SNAPSHOT"
