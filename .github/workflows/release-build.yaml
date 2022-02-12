@@ -34,13 +34,17 @@ jobs:
             --all \
             --target . \
             --addon
-      - name: Deploy Nightly Build
-        uses: docker/build-push-action@v2.9.0
+      - name: Deploy Release Builds
+        uses: actions/github-script@v6.0.0
         with:
-          push: true
-          tags: |
-            s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
-            s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
-            s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
-            s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
-            s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
+          script: |
+            docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }} ; \
+            docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }} ; \
+            docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }} ; \
+            docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }} ; \
+            docker push ghcr.io/s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
+            
+            
+            
+            
+            
