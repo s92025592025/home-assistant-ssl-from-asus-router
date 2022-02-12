@@ -25,5 +25,5 @@ jobs:
           args: |
             --test \
             --all \
-            --target .
+            --target . \
             --addon
