@@ -39,8 +39,8 @@ jobs:
         with:
           push: true
           tags:
-            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
-            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
-            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
-            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
-            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
+            - "s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}"
+            - "s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}"
+            - "s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}"
+            - "s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}"
+            - "s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}"
