@@ -1,0 +1,46 @@
+name: release-build
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Release Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1.12.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Get Add-on Release
+        uses: KJ002/read-yaml@v1.4
+        id: addonVersion
+        with:
+          file: 'config.yaml'
+          key-path: '["version"]'
+
+      - name: Run Release Build
+        uses: home-assistant/builder@2022.01.0
+        with:
+          args: |
+            --test \
+            --all \
+            --target . \
+            --addon
+      - name: Deploy Nightly Build
+        uses: docker/build-push-action@v2.9.0
+        with:
+          push: true
+          tags:
+            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
+            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
+            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
+            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
+            - s92025592025/refresher-ssl-cert-from-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
