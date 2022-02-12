@@ -21,7 +21,14 @@ jobs:
         with:
           ref: main
 
-      - name: Test build
+      - name: Get Add-on Release
+        uses: KJ002/read-yaml@v1.4
+        id: addonVersion
+        with:
+          file: 'config.yaml'
+          key-path: '["version"]'
+
+      - name: Deploy Nightly Build
         uses: home-assistant/builder@2022.01.0
         with:
           args: |
@@ -31,4 +38,4 @@ jobs:
             --all \
             --target . \
             --addon \
-            --base $BUILD_VERSION
+            --base "${{ steps.addonVersion.outputs.data }}"
