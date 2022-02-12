@@ -1,0 +1,34 @@
+name: nightly-build
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  deploy:
+    name: Deploy nightly-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1.12.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Test build
+        uses: home-assistant/builder@2022.01.0
+        with:
+          args: |
+            --docker-hub ghcr.io \
+            --docker-user ${{ github.actor }} \
+            --docker-password ${{ secrets.GITHUB_TOKEN }} \
+            --all \
+            --target . \
+            --addon \
+            --base $BUILD_VERSION
