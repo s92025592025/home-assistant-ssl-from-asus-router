@@ -36,6 +36,8 @@ jobs:
             --test \
             --all \
             --target . \
+            --image "s92025592025/refresher-ssl-cert-from-asus-ddns-router" \
+            --version ${{ steps.addonVersion.outputs.data }} \
             --addon
 
       - name: Login GitHub Container Registry on Docker
