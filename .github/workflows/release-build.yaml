@@ -36,7 +36,7 @@ jobs:
             --test \
             --all \
             --target . \
-            --image "s92025592025/refresher-ssl-cert-from-asus-ddns-router" \
+            --image "s92025592025/refresher-ssl-cert-from-asus-ddns-router-{arch}" \
             --version ${{ steps.addonVersion.outputs.data }} \
             --addon
 
