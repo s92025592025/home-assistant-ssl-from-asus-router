@@ -23,8 +23,11 @@ jobs:
         uses: KJ002/read-yaml@v1.4
         id: addonVersion
         with:
-          file: 'config.yaml'
+          file: './config.yaml'
           key-path: '["version"]'
+
+      - name: Display read-yaml output
+        run: echo "${{ steps.yaml-data.outputs.data }}"
 
       - name: Run Release Build
         uses: home-assistant/builder@2022.01.0
