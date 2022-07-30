@@ -19,6 +19,7 @@ options:
   sslFromAsusRouter:
     routerUser: null
     routerIp: null
+    routerSshPort: 22
     rsaPrivateKeyPath: null
     keyFilePathOnRouter: null
     certFilePathOnRouter: null
@@ -26,6 +27,7 @@ schema:
   sslFromAsusRouter:
     routerUser: str
     routerIp: str
+    routerSshPort: integer
     rsaPrivateKeyPath: str
     keyFilePathOnRouter: str
     certFilePathOnRouter: str
