@@ -27,7 +27,7 @@ schema:
   sslFromAsusRouter:
     routerUser: str
     routerIp: str
-    routerSshPort: integer
+    routerSshPort: int
     rsaPrivateKeyPath: str
     keyFilePathOnRouter: str
     certFilePathOnRouter: str
