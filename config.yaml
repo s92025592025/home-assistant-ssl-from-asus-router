@@ -1,5 +1,5 @@
 name: "Refresh SSL Cert From Asus DDNS Router"
-version: 0.0.3
+version: 0.1.0
 slug: "refresher_ssl_cert_from_asus_ddns_router"
 description: "An Add-on that help refresh the SSL certificate under the /SSL folder from Asus Router DDNS"
 startup: once
