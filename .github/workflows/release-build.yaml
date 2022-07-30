@@ -16,8 +16,6 @@ jobs:
 
       - name: Checkout the repository
         uses: actions/checkout@v2
-        with:
-          ref: main
 
       - name: Get Add-on Release
         uses: KJ002/read-yaml@v1.4
