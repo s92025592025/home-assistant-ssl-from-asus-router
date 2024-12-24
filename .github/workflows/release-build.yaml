@@ -30,13 +30,13 @@ jobs:
         run: echo "${{ steps.yaml-data.outputs.data }}"
 
       - name: Run Release Build
-        uses: home-assistant/builder@2022.01.0
+        uses: home-assistant/builder@2024.08.2
         with:
           args: |
             --test \
             --all \
             --target . \
-            --image "s92025592025/refresher-ssl-cert-from-asus-ddns-router-{arch}" \
+            --image "refresher-ssl-cert-from-asus-ddns-router-{arch}" \
             --version ${{ steps.addonVersion.outputs.data }} \
             --addon
 
